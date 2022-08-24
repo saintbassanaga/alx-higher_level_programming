@@ -10,7 +10,7 @@ else:
 if last_digit < 6:
     text = " less than 6 and not 0"
 elif last_digit > 5:
-    text = " greather than 5"
+    text = " greater than 5"
 else:
     text = " 0"
 print("Last digit of {} is {} and is{}".format(number, last_digit, text))
