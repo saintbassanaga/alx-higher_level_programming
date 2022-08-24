@@ -7,10 +7,10 @@ if number < 0:
 else:
     last_digit = int(repr(number)[-1])
 # comparing
-if last_digit < 6:
-    text = " less than 6 and not 0"
+if last_digit == 0:
+    text = " 0"
 elif last_digit > 5:
     text = " greater than 5"
 else:
-    text = " 0"
+    text = " less than 6 and not 0"
 print("Last digit of {} is {} and is{}".format(number, last_digit, text))
