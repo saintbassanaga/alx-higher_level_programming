@@ -7,7 +7,6 @@ if number < 0:
 else:
     last_digit = int(repr(number)[-1])
 # comparing
-<<<<<<< HEAD
 if last_digit < 6:
     text = " less than 6 and not 0"
 elif last_digit > 5:
