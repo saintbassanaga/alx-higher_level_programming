@@ -1,1 +1,1 @@
-Python linked with Mysql and SQLALchemy
+# Python object relational mapping
