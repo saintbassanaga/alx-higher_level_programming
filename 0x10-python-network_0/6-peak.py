@@ -1,24 +1,25 @@
 #!/usr/bin/python3
-"""Finds a peak in a list of unsorted integers"""
+"""Find Peek Module."""
 
 
-def find_peak(list_of_integers):
-    """Finds a peak in list_of_integers"""
+def find_peak(arr):
+    """finds a peak in a list of unsorted integer."""
+    low = 0
+    size = len(arr)
+    r = size - 1
 
-    if list_of_integers is None or list_of_integers == []:
-        return None
-    lo = 0
-    hi = len(list_of_integers)
-    mid = ((hi - lo) // 2) + lo
-    mid = int(mid)
-    if hi == 1:
-        return list_of_integers[0]
-    if hi == 2:
-        return max(list_of_integers)
-    if list_of_integers[mid] >= list_of_integers[mid - 1] and\
-            list_of_integers[mid] >= list_of_integers[mid + 1]:
-        return list_of_integers[mid]
-    if mid > 0 and list_of_integers[mid] < list_of_integers[mid + 1]:
-        return find_peak(list_of_integers[mid:])
-    if mid > 0 and list_of_integers[mid] < list_of_integers[mid - 1]:
-        return find_peak(list_of_integers[:mid])
+    if not arr:
+        return
+    if size == 1:
+        return arr[0]
+    if arr[0] >= arr[1]:
+        return arr[0]
+    if arr[size - 1] >= arr[size - 2]:
+        return arr[size - 1]
+    while low < r:
+        m = low + (r - low) // 2
+        if arr[m] <= arr[m + 1]:
+            low = m + 1
+        else:
+            r = m
+    return arr[low] if low < len(arr) else arr[low - 1]
